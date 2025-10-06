@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Card List</title>
+        <link rel="stylesheet" href="./styles/style.css" />
+    </head>
+    <body>
+        <h2 style="text-align: center; color: white">Mahsulotlar Boshqaruvi</h2>
+
+        <div class="container">
+            <div class="form-section">
+                <h3>Yangi Mahsulot Qo'shish</h3>
+                <input type="text" id="name" placeholder="Mahsulot nomi" />
+                <input type="url" id="imgUrl" placeholder="Rasm URL" />
+                <input type="number" id="price" placeholder="Narxi" />
+                <input
+                    type="number"
+                    id="quantity"
+                    placeholder="Sotib olish soni"
+                />
+                <label
+                    ><input type="checkbox" id="discount" /> Skidka bor</label
+                >
+                <button id="addBtn">Mahsulot Qo'shish</button>
+            </div>
+
+            <div class="list-section">
+                <h3>Mahsulotlar Ro'yxati</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>RASM</th>
+                            <th>NOMI</th>
+                            <th>NARXI</th>
+                            <th>SOTIB OLISH</th>
+                            <th>SKIDKA</th>
+                            <th>AMALLAR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productList">
+                        <tr id="emptyRow">
+                            <td colspan="6" class="empty">
+                                Hozircha mahsulot yo'q <br />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="./js/script.js"></script>
+    </body>
+</html>
