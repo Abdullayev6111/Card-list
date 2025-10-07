@@ -1,56 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: poppins-medium;
+    src: url(../fonts/Poppins-Medium.ttf);
+}
+
 body {
+    width: 100%;
+    height: 100vh;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     margin: 0;
-    padding: 20px;
+    padding: 30px;
     color: #333;
+    position: relative;
 }
 .container {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     background: #fff;
     border-radius: 10px;
     padding: 20px;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+.btn-cart {
+    background: #fff;
+    border: 2px solid #fff;
+    color: black;
+    font-family: poppins-bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: all 0.3s ease;
+}
+
+.main-text {
+    text-align: center;
+    color: white;
+    font-family: poppins-bold;
+    font-weight: 800;
+    font-size: 37px;
 }
 .form-section {
-    width: 30%;
+    width: 20%;
 }
 .form-section h3 {
-    margin-bottom: 15px;
+    font-family: poppins-bold;
+    font-size: 22px;
+    margin-bottom: 25px;
 }
+
+.form-section label {
+    font-size: 16px;
+    font-family: poppins-medium;
+}
+
 .form-section input,
 .form-section button {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
     border-radius: 6px;
+    font-family: poppins-bold;
     border: 1px solid #ddd;
 }
 .form-section button {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: white;
-    font-weight: bold;
     border: none;
+    font-size: 16px;
     cursor: pointer;
 }
 .list-section {
+    width: 80%;
     flex: 1;
+}
+
+.list-main-text {
+    font-family: poppins-bold;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
+    table-layout: auto;
 }
 table th,
 table td {
     border: none;
     padding: 10px;
     text-align: center;
+    font-size: 16px;
+    font-family: poppins-medium;
 }
 table th {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: white;
+    font-weight: 600;
 }
+
+table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+table th:last-child {
+    border-top-right-radius: 10px;
+}
+
 .btn {
     padding: 6px 12px;
     border-radius: 6px;
@@ -64,6 +141,11 @@ table th {
 .delete {
     background: #dc3545;
 }
+.buy {
+    background: #ff9800;
+    color: #fff;
+    margin-right: 6px;
+}
 .empty {
     text-align: center;
     padding: 20px;
@@ -73,4 +155,77 @@ img {
     width: 50px;
     height: 50px;
     border-radius: 6px;
+    object-fit: cover;
+}
+
+.skidka {
+    border: 2px solid red;
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 380px;
+    height: 100vh;
+    background: #f7f7f7;
+    box-shadow: -3px 0 6px rgba(0, 0, 0, 0.2);
+    transition: right 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    z-index: 9999;
+}
+.drawer.open {
+    right: 0;
+}
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.btn-close {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+.cart-items {
+    overflow-y: auto;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 6px;
+}
+.cart-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 6px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.cart-item img {
+    width: 54px;
+    height: 54px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+.cart-item .info {
+    flex: 1;
+    text-align: left;
+}
+.total {
+    margin-top: auto;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: right;
+    padding-top: 10px;
+    border-top: 2px solid #0078ff;
+}
+.table-actions {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    align-items: center;
 }

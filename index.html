@@ -4,50 +4,87 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Card List</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <link rel="stylesheet" href="./styles/style.css" />
     </head>
     <body>
-        <h2 style="text-align: center; color: white">Mahsulotlar Boshqaruvi</h2>
-
+        <h2 class="main-text">Mahsulotlar Boshqaruvi</h2>
+        <button class="btn-cart" id="cartBtn">
+            Savatcha(0) </i>
+        </button>
         <div class="container">
             <div class="form-section">
                 <h3>Yangi Mahsulot Qo'shish</h3>
-                <input type="text" id="name" placeholder="Mahsulot nomi" />
-                <input type="url" id="imgUrl" placeholder="Rasm URL" />
-                <input type="number" id="price" placeholder="Narxi" />
-                <input
-                    type="number"
-                    id="quantity"
-                    placeholder="Sotib olish soni"
-                />
-                <label
-                    ><input type="checkbox" id="discount" /> Skidka bor</label
-                >
+                <div class="items">
+                    <label for="name">Mahsulot nomi:</label>
+                    <input type="text" id="name" />
+                </div>
+                <div class="items">
+                    <label for="imgUrl">Rasm URL:</label>
+                    <input
+                        type="url"
+                        id="imgUrl"
+                        placeholder="https://example.com/image.png"
+                    />
+                </div>
+                <div class="items">
+                    <label for="price">Narxi:</label>
+                    <input type="number" id="price" />
+                </div>
+                <div class="items">
+                    <label for="quantity">Sotib olish soni:</label>
+                    <input type="number" id="quantity" />
+                </div>
+                <div class="items">
+                    <input type="checkbox" id="isSale" />
+                    <label for="isSale">Chegirma bor </label>
+                </div>
+                <div class="items">
+                    <label for="discount">Chegirma foizi</label>
+                    <input type="number" id="discount" />
+                </div>
                 <button id="addBtn">Mahsulot Qo'shish</button>
             </div>
 
             <div class="list-section">
-                <h3>Mahsulotlar Ro'yxati</h3>
+                <h3 class="list-main-text">Mahsulotlar Ro'yxati</h3>
                 <table>
                     <thead>
                         <tr>
                             <th>RASM</th>
                             <th>NOMI</th>
                             <th>NARXI</th>
-                            <th>SOTIB OLISH</th>
-                            <th>SKIDKA</th>
+                            <th>SOTIB OLISH SONI</th>
+                            <th>CHEGIRMA</th>
                             <th>AMALLAR</th>
                         </tr>
                     </thead>
                     <tbody id="productList">
                         <tr id="emptyRow">
-                            <td colspan="6" class="empty">
-                                Hozircha mahsulot yo'q <br />
+                            <td colspan="7" class="empty">
+                                Hozircha mahsulot yo'q
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="drawer" id="drawer">
+            <div class="drawer-header">
+                <h3>Savatcha</h3>
+                <button id="closeDrawer" class="btn-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="total" id="cartTotal">Umumiy: 0 so'm</div>
         </div>
 
         <script src="./js/script.js"></script>
