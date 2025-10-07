@@ -73,12 +73,18 @@ body {
     font-family: poppins-medium;
 }
 
+.form-section .items {
+    display: flex;
+    flex-direction: column;
+}
+
 .form-section input,
 .form-section button {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
     border-radius: 6px;
+    outline: none;
     font-family: poppins-bold;
     border: 1px solid #ddd;
 }
@@ -89,6 +95,31 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
+
+.discount-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.discount-wrapper input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.discount-wrapper label {
+    font-size: 15px;
+    font-family: poppins-medium;
+    cursor: pointer;
+}
+
+.discount-input {
+    display: none;
+    flex-direction: column;
+}
+
 .list-section {
     width: 80%;
     flex: 1;

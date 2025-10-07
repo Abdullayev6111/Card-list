@@ -114,8 +114,8 @@ addBtn.addEventListener("click", () => {
             }</td>
             <td class="table-actions">
                 <button class="btn buy"><i class="fa-solid fa-cart-shopping"></i></button>
-                <button class="btn edit">Tahrirlash</button>
-                <button class="btn delete">O'chirish</button>
+                <button class="btn edit"><i class="fa-solid fa-pen"></i></button>
+                <button class="btn delete"><i class="fa-solid fa-trash"></i></button>
             </td>
         `;
         productList.appendChild(tr);
